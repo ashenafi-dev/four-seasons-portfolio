@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 export interface Project {
@@ -66,7 +67,13 @@ export default function ProjectCard({ project, season }: ProjectCardProps) {
       <div className={`relative h-48 sm:h-56 ${styles.bg}`}>
         <div className="absolute inset-0 flex items-center justify-center">
           {project.image ? (
-            <div className="w-full h-full bg-muted" />
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           ) : (
             <div className="text-6xl opacity-60">
               {season === "autumn" && "🍂"}

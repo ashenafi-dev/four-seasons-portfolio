@@ -21,6 +21,8 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleScroll = useCallback(() => {
+    if (typeof window === "undefined") return;
+    
     const currentScrollY = window.scrollY;
     
     if (currentScrollY < 10) {
