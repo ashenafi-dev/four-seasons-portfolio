@@ -28,7 +28,7 @@ interface ProjectSummerProps {
 
 export default function ProjectSummer({ onOpenCaseStudy }: ProjectSummerProps) {
   return (
-    <section id="summer" className="h-dvh py-20 bg-summer-bg/30 seasonal-transition flex items-center snap-start">
+    <section id="summer" className="min-h-screen py-20 bg-summer-bg/30 seasonal-transition flex items-center snap-start scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
