@@ -2,7 +2,7 @@
 
 import ProjectCard, { Project } from "@/components/ui/ProjectCard";
 
-const springProject: Project = {
+export const springProject: Project = {
   title: "Social Collaboration Platform",
   tagline: "Fresh ideas blooming through community-driven innovation",
   description:
@@ -22,9 +22,13 @@ const springProject: Project = {
   githubUrl: "https://github.com",
 };
 
-export default function ProjectSpring() {
+interface ProjectSpringProps {
+  onOpenCaseStudy?: () => void;
+}
+
+export default function ProjectSpring({ onOpenCaseStudy }: ProjectSpringProps) {
   return (
-    <section id="spring" className="py-20 bg-spring-bg/30 seasonal-transition">
+    <section id="spring" className="h-dvh py-20 bg-spring-bg/30 seasonal-transition flex items-center scroll-snap-align-start">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -35,7 +39,7 @@ export default function ProjectSpring() {
             </h2>
             <span className="text-4xl">🌸</span>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
             Fresh beginnings and blooming possibilities - a project nurturing growth
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-spring-primary to-spring-accent mx-auto mt-4 rounded-full" />
@@ -43,7 +47,7 @@ export default function ProjectSpring() {
 
         {/* Project Card */}
         <div className="max-w-4xl mx-auto">
-          <ProjectCard project={springProject} season="spring" />
+          <ProjectCard project={springProject} season="spring" onOpenCaseStudy={onOpenCaseStudy} />
         </div>
 
         {/* Decorative Elements */}

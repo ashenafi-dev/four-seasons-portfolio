@@ -2,7 +2,7 @@
 
 import ProjectCard, { Project } from "@/components/ui/ProjectCard";
 
-const winterProject: Project = {
+export const winterProject: Project = {
   title: "Real-Time Analytics Dashboard",
   tagline: "Crystal-clear insights through a beautiful data visualization platform",
   description:
@@ -22,9 +22,13 @@ const winterProject: Project = {
   githubUrl: "https://github.com",
 };
 
-export default function ProjectWinter() {
+interface ProjectWinterProps {
+  onOpenCaseStudy?: () => void;
+}
+
+export default function ProjectWinter({ onOpenCaseStudy }: ProjectWinterProps) {
   return (
-    <section id="winter" className="py-20 bg-winter-bg/30 seasonal-transition">
+    <section id="winter" className="h-dvh py-20 bg-winter-bg/30 seasonal-transition flex items-center scroll-snap-align-start">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -35,7 +39,7 @@ export default function ProjectWinter() {
             </h2>
             <span className="text-4xl">🌨️</span>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
             Cool precision and crystalline clarity - a project built with crisp logic
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-winter-primary to-winter-accent mx-auto mt-4 rounded-full" />
@@ -43,7 +47,7 @@ export default function ProjectWinter() {
 
         {/* Project Card */}
         <div className="max-w-4xl mx-auto">
-          <ProjectCard project={winterProject} season="winter" />
+          <ProjectCard project={winterProject} season="winter" onOpenCaseStudy={onOpenCaseStudy} />
         </div>
 
         {/* Decorative Elements */}

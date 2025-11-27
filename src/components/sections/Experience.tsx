@@ -74,10 +74,10 @@ export default function Experience() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-base-content mb-4">
             Experience & Contributions
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
             A journey through my professional growth and personal projects
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-winter-primary to-summer-primary mx-auto mt-4 rounded-full" />
@@ -86,7 +86,7 @@ export default function Experience() {
         {/* Timeline */}
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-border" />
+          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-base-300" />
 
           {/* Experience items */}
           <div className="space-y-12">
@@ -98,11 +98,11 @@ export default function Experience() {
                 }`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-10" />
+                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-base-100 z-10" />
 
                 {/* Content */}
                 <div className={`flex-1 ml-8 md:ml-0 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}>
-                  <div className="bg-card rounded-xl p-6 border border-border shadow-sm hover:shadow-md transition-shadow">
+                  <div className="bg-base-100 rounded-xl p-6 border border-base-300 shadow-sm hover:shadow-md transition-shadow">
                     {/* Header */}
                     <div className="flex items-start justify-between gap-4 mb-4">
                       <div>
@@ -116,10 +116,10 @@ export default function Experience() {
                           >
                             {exp.type === "work" ? "💼 Work" : "🚀 Project"}
                           </span>
-                          <span className="text-sm text-muted-foreground">{exp.period}</span>
+                          <span className="text-sm text-base-content/70">{exp.period}</span>
                         </div>
-                        <h3 className="text-xl font-bold text-foreground">{exp.title}</h3>
-                        <p className="text-muted-foreground">{exp.organization}</p>
+                        <h3 className="text-xl font-bold text-base-content">{exp.title}</h3>
+                        <p className="text-base-content/70">{exp.organization}</p>
                       </div>
                       {exp.link && (
                         <a
@@ -137,14 +137,14 @@ export default function Experience() {
                     </div>
 
                     {/* Description */}
-                    <p className="text-muted-foreground mb-4">{exp.description}</p>
+                    <p className="text-base-content/70 mb-4">{exp.description}</p>
 
                     {/* Achievements */}
                     <ul className="space-y-2 mb-4">
                       {exp.achievements.map((achievement, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm">
                           <span className="text-spring-primary mt-1">✓</span>
-                          <span className="text-foreground">{achievement}</span>
+                          <span className="text-base-content">{achievement}</span>
                         </li>
                       ))}
                     </ul>
@@ -154,7 +154,7 @@ export default function Experience() {
                       {exp.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground rounded-full"
+                          className="px-3 py-1 text-xs font-medium bg-base-200 text-base-content/70 rounded-full"
                         >
                           {tech}
                         </span>

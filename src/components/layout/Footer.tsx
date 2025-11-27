@@ -42,7 +42,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-base-100 border-t border-base-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
@@ -56,7 +56,7 @@ export default function Footer() {
                 Four Seasons
               </span>
             </Link>
-            <p className="text-muted-foreground text-sm max-w-xs">
+            <p className="text-base-content/70 text-sm max-w-xs">
               A unique developer portfolio showcasing projects through the lens of four seasons. 
               Crafted with passion and attention to detail.
             </p>
@@ -64,13 +64,13 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-base-content mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                    className="text-base-content/70 hover:text-base-content transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -81,7 +81,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Connect</h3>
+            <h3 className="font-semibold text-base-content mb-4">Connect</h3>
             <div className="flex space-x-4">
               {socialLinks.map((link) => (
                 <a
@@ -89,25 +89,25 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-base-content/70 hover:text-base-content transition-colors"
                   aria-label={link.name}
                 >
                   {link.icon}
                 </a>
               ))}
             </div>
-            <p className="mt-4 text-muted-foreground text-sm">
+            <p className="mt-4 text-base-content/70 text-sm">
               Feel free to reach out for collaborations or just a friendly chat!
             </p>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
+        <div className="mt-8 pt-8 border-t border-base-300 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-base-content/70 text-sm">
             © {currentYear} Four Seasons Portfolio. All rights reserved.
           </p>
-          <p className="text-muted-foreground text-sm">
+          <p className="text-base-content/70 text-sm">
             Built with{" "}
             <span className="text-red-500">❤</span>
             {" "}using Next.js, TypeScript & Tailwind CSS

@@ -85,7 +85,7 @@ const getLevelColor = (level: string) => {
     case "Familiar":
       return "bg-autumn-primary text-white";
     default:
-      return "bg-muted text-muted-foreground";
+      return "bg-base-200 text-base-content/70";
   }
 };
 
@@ -104,14 +104,14 @@ const getLevelWidth = (level: string) => {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 bg-muted/30">
+    <section id="skills" className="py-20 bg-base-200/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-base-content mb-4">
             Skills & Technologies
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
             A comprehensive overview of my technical toolkit
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-spring-primary to-autumn-primary mx-auto mt-4 rounded-full" />
@@ -121,15 +121,15 @@ export default function Skills() {
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-spring-primary" />
-            <span className="text-sm text-muted-foreground">Expert</span>
+            <span className="text-sm text-base-content/70">Expert</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-winter-primary" />
-            <span className="text-sm text-muted-foreground">Proficient</span>
+            <span className="text-sm text-base-content/70">Proficient</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-autumn-primary" />
-            <span className="text-sm text-muted-foreground">Familiar</span>
+            <span className="text-sm text-base-content/70">Familiar</span>
           </div>
         </div>
 
@@ -138,12 +138,12 @@ export default function Skills() {
           {skillCategories.map((category) => (
             <div
               key={category.name}
-              className="bg-card rounded-xl p-6 border border-border shadow-sm hover:shadow-md transition-shadow"
+              className="bg-base-100 rounded-xl p-6 border border-base-300 shadow-sm hover:shadow-md transition-shadow"
             >
               {/* Category Header */}
               <div className="flex items-center gap-3 mb-6">
                 <span className="text-3xl">{category.icon}</span>
-                <h3 className="text-lg font-bold text-foreground">{category.name}</h3>
+                <h3 className="text-lg font-bold text-base-content">{category.name}</h3>
               </div>
 
               {/* Skills List */}
@@ -151,14 +151,14 @@ export default function Skills() {
                 {category.skills.map((skill) => (
                   <div key={skill.name} className="space-y-1">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-foreground">{skill.name}</span>
+                      <span className="text-sm font-medium text-base-content">{skill.name}</span>
                       <span
                         className={`px-2 py-0.5 text-xs font-medium rounded-full ${getLevelColor(skill.level)}`}
                       >
                         {skill.level}
                       </span>
                     </div>
-                    <div className="h-2 bg-muted rounded-full overflow-hidden">
+                    <div className="h-2 bg-base-200 rounded-full overflow-hidden">
                       <div
                         className={`h-full ${getLevelWidth(skill.level)} ${getLevelColor(skill.level)} rounded-full transition-all duration-500`}
                       />
@@ -171,8 +171,8 @@ export default function Skills() {
         </div>
 
         {/* Additional Methodologies */}
-        <div className="mt-12 bg-card rounded-xl p-6 border border-border">
-          <h3 className="text-xl font-bold text-foreground mb-4 text-center">
+        <div className="mt-12 bg-base-100 rounded-xl p-6 border border-base-300">
+          <h3 className="text-xl font-bold text-base-content mb-4 text-center">
             Methodologies & Concepts
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
@@ -192,7 +192,7 @@ export default function Skills() {
             ].map((item) => (
               <span
                 key={item}
-                className="px-4 py-2 bg-muted text-foreground text-sm font-medium rounded-full hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                className="px-4 py-2 bg-base-200 text-base-content text-sm font-medium rounded-full hover:bg-primary hover:text-primary-content transition-colors cursor-default"
               >
                 {item}
               </span>

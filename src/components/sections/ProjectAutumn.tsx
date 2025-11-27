@@ -2,7 +2,7 @@
 
 import ProjectCard, { Project } from "@/components/ui/ProjectCard";
 
-const autumnProject: Project = {
+export const autumnProject: Project = {
   title: "E-Commerce Platform",
   tagline: "A full-featured online marketplace with real-time inventory management",
   description:
@@ -22,9 +22,13 @@ const autumnProject: Project = {
   githubUrl: "https://github.com",
 };
 
-export default function ProjectAutumn() {
+interface ProjectAutumnProps {
+  onOpenCaseStudy?: () => void;
+}
+
+export default function ProjectAutumn({ onOpenCaseStudy }: ProjectAutumnProps) {
   return (
-    <section id="autumn" className="py-20 bg-autumn-bg/30 seasonal-transition">
+    <section id="autumn" className="h-dvh py-20 bg-autumn-bg/30 seasonal-transition flex items-center scroll-snap-align-start">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -35,7 +39,7 @@ export default function ProjectAutumn() {
             </h2>
             <span className="text-4xl">🍁</span>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
             Warm colors and cozy code - a project that harvests innovation
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-autumn-primary to-autumn-accent mx-auto mt-4 rounded-full" />
@@ -43,7 +47,7 @@ export default function ProjectAutumn() {
 
         {/* Project Card */}
         <div className="max-w-4xl mx-auto">
-          <ProjectCard project={autumnProject} season="autumn" />
+          <ProjectCard project={autumnProject} season="autumn" onOpenCaseStudy={onOpenCaseStudy} />
         </div>
 
         {/* Decorative Elements */}

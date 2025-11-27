@@ -41,14 +41,14 @@ const testimonials: Testimonial[] = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 bg-muted/30">
+    <section id="testimonials" className="py-20 bg-base-200/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-base-content mb-4">
             What People Say
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
             Feedback from clients, managers, and colleagues I&apos;ve worked with
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-winter-primary to-spring-primary mx-auto mt-4 rounded-full" />
@@ -59,7 +59,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
-              className="relative bg-card rounded-xl p-6 border border-border shadow-sm hover:shadow-lg transition-all duration-300 group"
+              className="relative bg-base-100 rounded-xl p-6 border border-base-300 shadow-sm hover:shadow-lg transition-all duration-300 group"
             >
               {/* Quote mark decoration */}
               <div className="absolute -top-4 -left-2 text-6xl text-primary/20 font-serif">
@@ -68,19 +68,19 @@ export default function Testimonials() {
 
               {/* Quote */}
               <blockquote className="relative z-10 mb-6">
-                <p className="text-muted-foreground leading-relaxed italic">
+                <p className="text-base-content/70 leading-relaxed italic">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
               </blockquote>
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-muted flex items-center justify-center text-2xl">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-base-200 flex items-center justify-center text-2xl">
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="font-semibold text-base-content">{testimonial.name}</p>
+                  <p className="text-sm text-base-content/70">
                     {testimonial.title} at {testimonial.company}
                   </p>
                   <p className="text-xs text-primary">{testimonial.relationship}</p>
@@ -103,7 +103,7 @@ export default function Testimonials() {
 
         {/* Call to action */}
         <div className="mt-12 text-center">
-          <p className="text-muted-foreground">
+          <p className="text-base-content/70">
             Want to work together?{" "}
             <a
               href="#contact"

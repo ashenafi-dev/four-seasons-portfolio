@@ -90,10 +90,10 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-base-content mb-4">
             Get In Touch
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
             Have a project in mind or just want to chat? I&apos;d love to hear from you!
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-summer-primary to-autumn-primary mx-auto mt-4 rounded-full" />
@@ -103,10 +103,10 @@ export default function Contact() {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+              <h3 className="text-2xl font-bold text-base-content mb-4">
                 Let&apos;s build something amazing together!
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-base-content/70 leading-relaxed">
                 I&apos;m always open to new opportunities, collaborations, and interesting
                 conversations. Whether you have a project idea, a question, or just want
                 to say hello, feel free to reach out.
@@ -117,7 +117,7 @@ export default function Contact() {
             <div className="space-y-4">
               <a
                 href="mailto:hello@example.com"
-                className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:border-primary transition-colors group"
+                className="flex items-center gap-4 p-4 bg-base-100 rounded-xl border border-base-300 hover:border-primary transition-colors group"
               >
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -125,12 +125,12 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-medium text-foreground">Email</p>
-                  <p className="text-sm text-muted-foreground">hello@example.com</p>
+                  <p className="font-medium text-base-content">Email</p>
+                  <p className="text-sm text-base-content/70">hello@example.com</p>
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border">
+              <div className="flex items-center gap-4 p-4 bg-base-100 rounded-xl border border-base-300">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-spring-primary/10 flex items-center justify-center text-spring-primary">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -138,21 +138,21 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-medium text-foreground">Location</p>
-                  <p className="text-sm text-muted-foreground">San Francisco, CA</p>
+                  <p className="font-medium text-base-content">Location</p>
+                  <p className="text-sm text-base-content/70">San Francisco, CA</p>
                 </div>
               </div>
             </div>
 
             {/* Social Links */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Connect with me</h4>
+              <h4 className="font-semibold text-base-content mb-4">Connect with me</h4>
               <div className="flex gap-4">
                 <a
                   href="https://github.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+                  className="w-10 h-10 rounded-full bg-base-100 border border-base-300 flex items-center justify-center text-base-content/70 hover:text-base-content hover:border-primary transition-colors"
                   aria-label="GitHub"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -163,7 +163,7 @@ export default function Contact() {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+                  className="w-10 h-10 rounded-full bg-base-100 border border-base-300 flex items-center justify-center text-base-content/70 hover:text-base-content hover:border-primary transition-colors"
                   aria-label="LinkedIn"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -174,7 +174,7 @@ export default function Contact() {
                   href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+                  className="w-10 h-10 rounded-full bg-base-100 border border-base-300 flex items-center justify-center text-base-content/70 hover:text-base-content hover:border-primary transition-colors"
                   aria-label="Twitter"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -186,7 +186,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-card rounded-xl p-6 sm:p-8 border border-border shadow-sm">
+          <div className="bg-base-100 rounded-xl p-6 sm:p-8 border border-base-300 shadow-sm">
             {isSubmitted ? (
               <div className="text-center py-12">
                 <div className="w-16 h-16 bg-spring-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -194,15 +194,15 @@ export default function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">Message Sent!</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-bold text-base-content mb-2">Message Sent!</h3>
+                <p className="text-base-content/70">
                   Thank you for reaching out. I&apos;ll get back to you soon!
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-base-content mb-2">
                     Name
                   </label>
                   <input
@@ -211,18 +211,18 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-background border ${
-                      errors.name ? "border-red-500" : "border-border"
-                    } rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors`}
+                    className={`input input-bordered w-full ${
+                      errors.name ? "input-error" : ""
+                    }`}
                     placeholder="Your name"
                   />
                   {errors.name && (
-                    <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+                    <p className="mt-1 text-sm text-error">{errors.name}</p>
                   )}
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-base-content mb-2">
                     Email
                   </label>
                   <input
@@ -231,18 +231,18 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-background border ${
-                      errors.email ? "border-red-500" : "border-border"
-                    } rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors`}
+                    className={`input input-bordered w-full ${
+                      errors.email ? "input-error" : ""
+                    }`}
                     placeholder="your.email@example.com"
                   />
                   {errors.email && (
-                    <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                    <p className="mt-1 text-sm text-error">{errors.email}</p>
                   )}
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-base-content mb-2">
                     Subject
                   </label>
                   <input
@@ -251,18 +251,18 @@ export default function Contact() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-background border ${
-                      errors.subject ? "border-red-500" : "border-border"
-                    } rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors`}
+                    className={`input input-bordered w-full ${
+                      errors.subject ? "input-error" : ""
+                    }`}
                     placeholder="What's this about?"
                   />
                   {errors.subject && (
-                    <p className="mt-1 text-sm text-red-500">{errors.subject}</p>
+                    <p className="mt-1 text-sm text-error">{errors.subject}</p>
                   )}
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-base-content mb-2">
                     Message
                   </label>
                   <textarea
@@ -271,27 +271,24 @@ export default function Contact() {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-background border ${
-                      errors.message ? "border-red-500" : "border-border"
-                    } rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none`}
+                    className={`textarea textarea-bordered w-full resize-none ${
+                      errors.message ? "textarea-error" : ""
+                    }`}
                     placeholder="Tell me about your project..."
                   />
                   {errors.message && (
-                    <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+                    <p className="mt-1 text-sm text-error">{errors.message}</p>
                   )}
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 px-6 text-white font-medium bg-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-colors flex items-center justify-center gap-2"
+                  className="btn btn-primary w-full"
                 >
                   {isSubmitting ? (
                     <>
-                      <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                      </svg>
+                      <span className="loading loading-spinner loading-sm"></span>
                       Sending...
                     </>
                   ) : (
@@ -310,7 +307,7 @@ export default function Contact() {
 
         {/* Closing Message */}
         <div className="mt-16 text-center">
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-base-content/70">
             Looking forward to hearing from you! 👋
           </p>
         </div>

@@ -2,7 +2,7 @@
 
 import ProjectCard, { Project } from "@/components/ui/ProjectCard";
 
-const summerProject: Project = {
+export const summerProject: Project = {
   title: "Health & Fitness Tracker",
   tagline: "Bringing sunshine to personal wellness through technology",
   description:
@@ -22,9 +22,13 @@ const summerProject: Project = {
   githubUrl: "https://github.com",
 };
 
-export default function ProjectSummer() {
+interface ProjectSummerProps {
+  onOpenCaseStudy?: () => void;
+}
+
+export default function ProjectSummer({ onOpenCaseStudy }: ProjectSummerProps) {
   return (
-    <section id="summer" className="py-20 bg-summer-bg/30 seasonal-transition">
+    <section id="summer" className="h-dvh py-20 bg-summer-bg/30 seasonal-transition flex items-center scroll-snap-align-start">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -35,7 +39,7 @@ export default function ProjectSummer() {
             </h2>
             <span className="text-4xl">🏖️</span>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
             Bright energy and endless possibilities - a project radiating success
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-summer-primary to-summer-accent mx-auto mt-4 rounded-full" />
@@ -43,7 +47,7 @@ export default function ProjectSummer() {
 
         {/* Project Card */}
         <div className="max-w-4xl mx-auto">
-          <ProjectCard project={summerProject} season="summer" />
+          <ProjectCard project={summerProject} season="summer" onOpenCaseStudy={onOpenCaseStudy} />
         </div>
 
         {/* Decorative Elements */}
