@@ -1,0 +1,141 @@
+# Comprehensive Portfolio Website Enhancement Plan
+
+This plan details the steps to enhance the Next.js portfolio website based on the user's requirements. The project uses Next.js 15 and Tailwind CSS v4.
+
+## **Part 1: Themeing with daisyUI**
+
+1.  **Install Dependencies**:
+    *   Install `daisyUI` as a dev dependency: `npm install -D daisyui`
+    *   Install `next-themes` for theme management: `npm install next-themes`
+
+2.  **Configure Tailwind CSS**:
+    *   Since the project uses a config-less Tailwind setup, create a `tailwind.config.ts` file.
+    *   Add the `daisyUI` plugin to the config and define the light and dark themes.
+
+    ```typescript
+    // tailwind.config.ts
+    import type { Config } from 'tailwindcss'
+
+    const config: Config = {
+      content: [
+        './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+      ],
+      theme: {
+        extend: {},
+      },
+      plugins: [
+        require('daisyui'),
+      ],
+      daisyui: {
+        themes: ["light", "dark"],
+      },
+    }
+    export default config
+    ```
+    * You will need to remove the existing theme implementation from `globals.css`.
+
+3.  **Create a Theme Provider**:
+    *   Create a new file `src/app/providers.tsx`.
+    *   Use `next-themes`' `ThemeProvider` to wrap the application's children.
+
+    ```tsx
+    // src/app/providers.tsx
+    'use client'
+
+    import { ThemeProvider } from 'next-themes'
+
+    export function Providers({ children }: { children: React.ReactNode }) {
+      return <ThemeProvider>{children}</ThemeProvider>
+    }
+    ```
+
+4.  **Update Root Layout**:
+    *   In `src/app/layout.tsx`, import and use the `Providers` component to wrap the `children`.
+
+5.  **Create Theme Switcher UI**:
+    *   Create a new component `src/components/layout/ThemeSwitcher.tsx`.
+    *   This component will use the `useTheme` hook from `next-themes` to cycle through "light", "dark", and "system" (auto) themes. It should be a simple button or dropdown.
+
+6.  **Integrate into Header**:
+    *   Add the `ThemeSwitcher` component to `src/components/layout/Header.tsx`.
+
+## **Part 2: Personalization**
+
+1.  **Update Hero Section**:
+    *   In `src/components/sections/Hero.tsx`, replace the placeholder name with "Ashenafi Yirgalem".
+    *   Use the Next.js `Image` component to display the user's photo from `public/image/ashenafi.jpg`. Replace any placeholder images.
+
+2.  **Update About Section**:
+    *   In `src/components/sections/About.tsx`, use the `Image` component to display `public/image/ashenafi.jpg`.
+
+## **Part 3: Project Section Redesign**
+
+1.  **Create a Scroll-Snap Container**:
+    *   In `src/app/page.tsx`, wrap the four project sections (`ProjectSpring`, `ProjectSummer`, `ProjectAutumn`, `ProjectWinter`) in a `div` that has scroll-snapping enabled.
+    *   This container should have `h-screen overflow-y-scroll scroll-snap-type-y-mandatory`.
+    *   Each project section component should be a direct child of this container and have `scroll-snap-align-start`.
+
+2.  **Adjust Section Height**:
+    *   Modify each of the four project section components (`src/components/sections/Project*.tsx`) to have a height of `100dvh` (`h-dvh`).
+
+3.  **Update Navigation**:
+    *   In `src/components/layout/Header.tsx`, replace the individual links to the four project sections with a single link titled "My Works" that navigates to the first project section.
+
+4LAGI-GUESS
+4.  **Implement Case Study Modal**:
+    *   Create a new reusable modal component: `src/components/ui/CaseStudyModal.tsx`.
+    *   This component will receive project data (title, description, image, etc.) as props.
+    *   It should be a full-screen fixed-position overlay with a dark background.
+    *   It must have an "X" button in the top-right corner to close it.
+    *   The layout should feature a large project image at the top and detailed case study text below.
+
+5.  **Create a Modal Manager**:
+    *   In `src/app/page.tsx`, use React's `useState` to manage the currently open case study project and the modal's visibility.
+    *   Pass down the function to open the modal to the project sections.
+
+6.  **Redesign Project Card**:
+    *   In `src/components/ui/ProjectCard.tsx`, simplify the content.
+    *   Remove most of the details and buttons.
+    *   Add a "Case Study" button. This button will call the function passed down from `page.tsx` to open the modal with the corresponding project's data.
+
+## **Part 4: Dashboard for Content Management**
+
+1.  **Create Data Storage**:
+    *   Create a new directory `src/data`.
+    *   Inside, create a JSON file `content.json`. This file will store all dynamic content for the site. Structure it logically with keys for `profile`, `experience`, `projects`, etc.
+
+    ```json
+    // src/data/content.json
+    {
+      "profile": {
+        "name": "Ashenafi Yirgalem",
+        "image": "/image/ashenafi.jpg"
+      },
+      "projects": {
+        "spring": { ... },
+        "summer": { ... },
+        "autumn": { ... },
+        "winter": { ... }
+      },
+      "experience": [ ... ],
+      "contact": { ... }
+    }
+    ```
+
+2.  **Create API Routes for CRUD**:
+    *   Create a new API route `src/app/api/content/route.ts`.
+    *   **GET Handler**: Implement a `GET` function that reads `content.json` using `fs/promises` and returns its content.
+    *   **POST Handler**: Implement a `POST` function that receives new content in the request body, reads the existing `content.json`, merges the new data, and writes the updated content back to the file. Add validation to ensure data integrity.
+
+3.  **Create the Dashboard Page**:
+    *   Create the file `src/app/dashboard/page.tsx`. This should be a client component (`'use client'`).
+    *   It should fetch initial data from the `/api/content` endpoint.
+    *   Create forms for updating each section of the `content.json` file (profile, projects, experience, contact).
+    *   On form submission, send a `POST` request to `/api/content` with the updated data.
+    *   This page should not use the main `Header` or `Footer` to keep it clean and private.
+
+4.  **Integrate Dynamic Data into the Main Site**:
+    *   Refactor all components (`Hero`, `About`, `Project*`, `Contact`, etc.) to fetch their content from the `content.json` file instead of having it hardcoded.
+    *   You can do this by having the main `page.tsx` fetch the data and pass it down as props, or by creating specific data-fetching functions. For a server-rendered approach, read the file directly in the server components.
