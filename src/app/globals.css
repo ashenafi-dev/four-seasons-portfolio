@@ -110,15 +110,6 @@ body {
   transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-/* Scroll snap utilities */
-.scroll-snap-type-y-mandatory {
-  scroll-snap-type: y mandatory;
-}
-
-.scroll-snap-align-start {
-  scroll-snap-align: start;
-}
-
 /* Animation keyframes */
 @keyframes fadeInUp {
   from {

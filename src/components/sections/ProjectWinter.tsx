@@ -28,7 +28,7 @@ interface ProjectWinterProps {
 
 export default function ProjectWinter({ onOpenCaseStudy }: ProjectWinterProps) {
   return (
-    <section id="winter" className="h-dvh py-20 bg-winter-bg/30 seasonal-transition flex items-center scroll-snap-align-start">
+    <section id="winter" className="h-dvh py-20 bg-winter-bg/30 seasonal-transition flex items-center snap-start">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">

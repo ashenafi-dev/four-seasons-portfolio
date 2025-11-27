@@ -82,8 +82,9 @@ export async function POST(request: Request) {
     try {
       const fileContent = await fs.readFile(contentFilePath, "utf-8");
       existingContent = JSON.parse(fileContent);
-    } catch {
+    } catch (readError) {
       // File doesn't exist or is invalid, start fresh
+      console.log("Starting with empty content:", readError instanceof Error ? readError.message : "Unknown error");
       existingContent = {};
     }
 

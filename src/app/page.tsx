@@ -64,7 +64,7 @@ export default function Home() {
         <Process />
         
         {/* Project Sections with Scroll Snap */}
-        <div className="h-screen overflow-y-scroll scroll-snap-type-y-mandatory">
+        <div className="h-screen overflow-y-scroll snap-y snap-mandatory">
           <ProjectAutumn onOpenCaseStudy={() => openCaseStudy(autumnProject, "autumn")} />
           <ProjectWinter onOpenCaseStudy={() => openCaseStudy(winterProject, "winter")} />
           <ProjectSpring onOpenCaseStudy={() => openCaseStudy(springProject, "spring")} />
