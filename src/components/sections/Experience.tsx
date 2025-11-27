@@ -86,7 +86,7 @@ export default function Experience() {
         {/* Timeline */}
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-base-300" />
+          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-1 bg-gradient-to-b from-winter-primary via-spring-primary to-summer-primary opacity-60" />
 
           {/* Experience items */}
           <div className="space-y-12">
