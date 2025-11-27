@@ -1,0 +1,11 @@
+export { default as Hero } from "./Hero";
+export { default as About } from "./About";
+export { default as Experience } from "./Experience";
+export { default as Skills } from "./Skills";
+export { default as Process } from "./Process";
+export { default as ProjectAutumn } from "./ProjectAutumn";
+export { default as ProjectWinter } from "./ProjectWinter";
+export { default as ProjectSpring } from "./ProjectSpring";
+export { default as ProjectSummer } from "./ProjectSummer";
+export { default as Testimonials } from "./Testimonials";
+export { default as Contact } from "./Contact";
