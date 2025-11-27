@@ -2,16 +2,14 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const navLinks = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Skills", href: "#skills" },
   { name: "Process", href: "#process" },
-  { name: "Autumn", href: "#autumn" },
-  { name: "Winter", href: "#winter" },
-  { name: "Spring", href: "#spring" },
-  { name: "Summer", href: "#summer" },
+  { name: "My Works", href: "#autumn" },
   { name: "Testimonials", href: "#testimonials" },
 ];
 
@@ -50,9 +48,9 @@ export default function Header() {
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <nav className="bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+      <nav className="navbar bg-base-100/95 backdrop-blur-md border-b border-base-300 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex items-center justify-between h-16 w-full">
             {/* Logo */}
             <Link
               href="#hero"
@@ -70,42 +68,46 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors"
+                  className="px-3 py-2 text-sm font-medium text-base-content/70 hover:text-base-content hover:bg-base-200 rounded-md transition-colors"
                 >
                   {link.name}
                 </Link>
               ))}
             </div>
 
-            {/* Contact Button - Desktop */}
-            <div className="hidden lg:block">
+            {/* Right side - Theme Switcher and Contact Button */}
+            <div className="hidden lg:flex items-center gap-2">
+              <ThemeSwitcher />
               <Link
                 href="#contact"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-full transition-colors"
+                className="btn btn-primary btn-sm rounded-full"
               >
                 Contact Me
               </Link>
             </div>
 
             {/* Mobile menu button */}
-            <button
-              type="button"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted focus:outline-none focus:ring-2 focus:ring-primary"
-              aria-expanded={isMenuOpen}
-              aria-label="Toggle navigation menu"
-            >
-              <span className="sr-only">Open main menu</span>
-              {isMenuOpen ? (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
+            <div className="lg:hidden flex items-center gap-2">
+              <ThemeSwitcher />
+              <button
+                type="button"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="btn btn-ghost btn-circle"
+                aria-expanded={isMenuOpen}
+                aria-label="Toggle navigation menu"
+              >
+                <span className="sr-only">Open main menu</span>
+                {isMenuOpen ? (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -115,13 +117,13 @@ export default function Header() {
             isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"
           }`}
         >
-          <div className="px-4 pt-2 pb-4 space-y-1 bg-card border-t border-border">
+          <div className="px-4 pt-2 pb-4 space-y-1 bg-base-100 border-t border-base-300">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors"
+                className="block px-3 py-2 text-base font-medium text-base-content/70 hover:text-base-content hover:bg-base-200 rounded-md transition-colors"
               >
                 {link.name}
               </Link>
@@ -129,7 +131,7 @@ export default function Header() {
             <Link
               href="#contact"
               onClick={() => setIsMenuOpen(false)}
-              className="block w-full text-center mt-4 px-4 py-2 text-sm font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-full transition-colors"
+              className="btn btn-primary w-full mt-4 rounded-full"
             >
               Contact Me
             </Link>

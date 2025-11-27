@@ -1,41 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  /* Base colors */
-  --background: #fafafa;
-  --foreground: #171717;
-  --primary: #3b82f6;
-  --primary-foreground: #ffffff;
-  --secondary: #6b7280;
-  --muted: #f3f4f6;
-  --muted-foreground: #6b7280;
-  --accent: #f59e0b;
-  --border: #e5e7eb;
-  --card: #ffffff;
-  --card-foreground: #171717;
-  
-  /* Autumn colors */
+  /* Seasonal colors */
   --autumn-primary: #d97706;
   --autumn-secondary: #b45309;
   --autumn-accent: #f59e0b;
   --autumn-bg: #fef3c7;
   --autumn-text: #78350f;
   
-  /* Winter colors */
   --winter-primary: #3b82f6;
   --winter-secondary: #1d4ed8;
   --winter-accent: #60a5fa;
   --winter-bg: #eff6ff;
   --winter-text: #1e3a8a;
   
-  /* Spring colors */
   --spring-primary: #10b981;
   --spring-secondary: #059669;
   --spring-accent: #34d399;
   --spring-bg: #ecfdf5;
   --spring-text: #064e3b;
   
-  /* Summer colors */
   --summer-primary: #eab308;
   --summer-secondary: #ca8a04;
   --summer-accent: #facc15;
@@ -44,18 +28,6 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-border: var(--border);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  
   /* Seasonal theme colors */
   --color-autumn-primary: var(--autumn-primary);
   --color-autumn-secondary: var(--autumn-secondary);
@@ -82,22 +54,12 @@
   --color-summer-text: var(--summer-text);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --muted: #27272a;
-    --muted-foreground: #a1a1aa;
-    --border: #27272a;
-    --card: #18181b;
-    --card-foreground: #ededed;
-    
-    /* Adjust seasonal colors for dark mode */
-    --autumn-bg: #1c1a17;
-    --winter-bg: #0f172a;
-    --spring-bg: #0d1f17;
-    --summer-bg: #1a1a0f;
-  }
+[data-theme="dark"] {
+  /* Adjust seasonal colors for dark mode */
+  --autumn-bg: #1c1a17;
+  --winter-bg: #0f172a;
+  --spring-bg: #0d1f17;
+  --summer-bg: #1a1a0f;
 }
 
 * {
@@ -109,8 +71,6 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
 }
@@ -121,27 +81,27 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--muted);
+  background: oklch(var(--b2));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--secondary);
+  background: oklch(var(--bc) / 0.3);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--foreground);
+  background: oklch(var(--bc) / 0.5);
 }
 
 /* Selection styling */
 ::selection {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
+  background-color: oklch(var(--p));
+  color: oklch(var(--pc));
 }
 
 /* Focus styles for accessibility */
 :focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid oklch(var(--p));
   outline-offset: 2px;
 }
 
