@@ -4,8 +4,11 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-base-200/30">
+    <section id="about" className="py-20 bg-base-200/30" aria-labelledby="about-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Visually hidden heading for accessibility */}
+        <h2 id="about-heading" className="sr-only">About Me</h2>
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image Side */}
           <div className="relative">
