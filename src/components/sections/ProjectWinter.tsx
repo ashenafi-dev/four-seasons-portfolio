@@ -28,36 +28,9 @@ interface ProjectWinterProps {
 
 export default function ProjectWinter({ onOpenCaseStudy }: ProjectWinterProps) {
   return (
-    <section id="winter" className="min-h-screen py-20 bg-winter-bg/30 seasonal-transition flex items-center snap-start scroll-mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="text-4xl">❄️</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-winter-text">
-              Winter Project
-            </h2>
-            <span className="text-4xl">🌨️</span>
-          </div>
-          <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
-            Cool precision and crystalline clarity - a project built with crisp logic
-          </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-winter-primary to-winter-accent mx-auto mt-4 rounded-full" />
-        </div>
-
-        {/* Project Card */}
-        <div className="max-w-4xl mx-auto">
-          <ProjectCard project={winterProject} season="winter" onOpenCaseStudy={onOpenCaseStudy} />
-        </div>
-
-        {/* Decorative Elements */}
-        <div className="relative mt-16">
-          <div className="flex justify-center gap-8 text-4xl opacity-30">
-            <span className="animate-float">❄️</span>
-            <span className="animate-float animation-delay-200">🌨️</span>
-            <span className="animate-float animation-delay-400">⛄</span>
-          </div>
-        </div>
+    <section id="winter" className="py-16 bg-emerald-400/5 seasonal-transition snap-start scroll-mt-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ProjectCard project={winterProject} season="winter" onOpenCaseStudy={onOpenCaseStudy} />
       </div>
     </section>
   );

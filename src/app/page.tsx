@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Header, Footer } from "@/components/layout";
+import { Header } from "@/components/layout";
 import {
   Hero,
   About,
@@ -63,7 +63,7 @@ export default function Home() {
         <Skills />
         <Process />
         
-        {/* Project Sections - flowing with content, snap on scroll */}
+        {/* Project Sections */}
         <ProjectAutumn onOpenCaseStudy={() => openCaseStudy(autumnProject, "autumn")} />
         <ProjectWinter onOpenCaseStudy={() => openCaseStudy(winterProject, "winter")} />
         <ProjectSpring onOpenCaseStudy={() => openCaseStudy(springProject, "spring")} />
@@ -72,7 +72,6 @@ export default function Home() {
         <Testimonials />
         <Contact />
       </main>
-      <Footer />
 
       {/* Case Study Modal */}
       <CaseStudyModal

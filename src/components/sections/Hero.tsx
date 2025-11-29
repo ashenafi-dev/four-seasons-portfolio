@@ -9,23 +9,16 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
     >
-      {/* Seasonal Background Animation */}
+      {/* Background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-autumn-bg via-base-100 to-winter-bg opacity-50" />
-        {/* Floating seasonal elements */}
-        <div className="absolute top-20 left-10 text-4xl animate-float opacity-60">🍂</div>
-        <div className="absolute top-40 right-20 text-3xl animate-float animation-delay-200 opacity-60">❄️</div>
-        <div className="absolute bottom-40 left-20 text-3xl animate-float animation-delay-300 opacity-60">🌷</div>
-        <div className="absolute bottom-20 right-10 text-4xl animate-float animation-delay-100 opacity-60">☀️</div>
-        <div className="absolute top-1/4 left-1/4 text-2xl animate-float animation-delay-400 opacity-40">🍁</div>
-        <div className="absolute bottom-1/4 right-1/4 text-2xl animate-float animation-delay-500 opacity-40">🌸</div>
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 via-base-100 to-amber-400/10 opacity-50" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center space-y-8">
           {/* Profile Image */}
           <div className="animate-fadeIn">
-            <div className="mx-auto w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-br from-autumn-primary via-spring-primary to-summer-primary p-1">
+            <div className="mx-auto w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-br from-emerald-400 via-red-400 to-amber-400 p-1">
               <div className="w-full h-full rounded-full overflow-hidden">
                 <Image
                   src="/image/ashenafi.jpg"
@@ -42,7 +35,7 @@ export default function Hero() {
           {/* Name */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-fadeInUp">
             <span className="block text-base-content">Hello, I&apos;m</span>
-            <span className="block bg-gradient-to-r from-autumn-primary via-spring-primary to-summer-primary bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-emerald-400 via-red-400 to-amber-400 bg-clip-text text-transparent">
               Ashenafi Yirgalem
             </span>
           </h1>
@@ -62,7 +55,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fadeInUp animation-delay-300">
             <Link
               href="#autumn"
-              className="btn btn-primary rounded-full"
+              className="btn bg-emerald-400 hover:bg-emerald-500 text-white border-none rounded-full"
             >
               <span>View My Work</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,11 +63,11 @@ export default function Hero() {
               </svg>
             </Link>
             <a
-              href="/resume.pdf"
+              href="/cv.pdf"
               download
-              className="btn btn-outline rounded-full"
+              className="btn btn-outline border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-white hover:border-emerald-400 rounded-full"
             >
-              <span>Download Resume</span>
+              <span>Download CV</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>

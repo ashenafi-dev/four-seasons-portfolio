@@ -5,19 +5,15 @@ interface Testimonial {
   name: string;
   title: string;
   company: string;
-  relationship: string;
-  avatar: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     quote:
-      "An exceptional developer who consistently delivers high-quality code. Their ability to understand complex requirements and translate them into elegant solutions is remarkable. A true asset to any team.",
+      "An exceptional developer who consistently delivers high-quality code. Their ability to understand complex requirements and translate them into elegant solutions is remarkable.",
     name: "Sarah Johnson",
     title: "Engineering Manager",
     company: "Tech Corp",
-    relationship: "Former Manager",
-    avatar: "👩‍💼",
   },
   {
     quote:
@@ -25,8 +21,6 @@ const testimonials: Testimonial[] = [
     name: "Michael Chen",
     title: "Product Lead",
     company: "StartupXYZ",
-    relationship: "Client",
-    avatar: "👨‍💻",
   },
   {
     quote:
@@ -34,84 +28,57 @@ const testimonials: Testimonial[] = [
     name: "Emily Rodriguez",
     title: "Senior Developer",
     company: "Digital Solutions Inc",
-    relationship: "Colleague",
-    avatar: "👩‍🔬",
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 bg-base-200/30">
+    <section id="testimonials" className="py-20 bg-base-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-base-content mb-4">
             What People Say
           </h2>
-          <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
-            Feedback from clients, managers, and colleagues I&apos;ve worked with
-          </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-winter-primary to-spring-primary mx-auto mt-4 rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-emerald-400 via-red-400 to-amber-400 mx-auto rounded-full" />
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
-              className="relative bg-base-100 rounded-xl p-6 border border-base-300 shadow-sm hover:shadow-lg transition-all duration-300 group"
+              className={`relative p-8 rounded-2xl bg-gradient-to-br ${
+                index === 0 ? "from-emerald-400/10 to-emerald-400/5 border-emerald-400/20" :
+                index === 1 ? "from-red-400/10 to-red-400/5 border-red-400/20" :
+                "from-amber-400/10 to-amber-400/5 border-amber-400/20"
+              } border backdrop-blur-sm`}
             >
-              {/* Quote mark decoration */}
-              <div className="absolute -top-4 -left-2 text-6xl text-primary/20 font-serif">
-                &ldquo;
-              </div>
-
               {/* Quote */}
-              <blockquote className="relative z-10 mb-6">
-                <p className="text-base-content/70 leading-relaxed italic">
+              <blockquote className="mb-6">
+                <p className="text-base-content/80 leading-relaxed">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
               </blockquote>
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-base-200 flex items-center justify-center text-2xl">
-                  {testimonial.avatar}
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold ${
+                  index === 0 ? "bg-emerald-400" :
+                  index === 1 ? "bg-red-400" :
+                  "bg-amber-400"
+                }`}>
+                  {testimonial.name.charAt(0)}
                 </div>
                 <div>
                   <p className="font-semibold text-base-content">{testimonial.name}</p>
-                  <p className="text-sm text-base-content/70">
-                    {testimonial.title} at {testimonial.company}
+                  <p className="text-sm text-base-content/60">
+                    {testimonial.title}, {testimonial.company}
                   </p>
-                  <p className="text-xs text-primary">{testimonial.relationship}</p>
                 </div>
               </div>
-
-              {/* Decorative element */}
-              <div
-                className={`absolute bottom-0 left-0 right-0 h-1 rounded-b-xl ${
-                  index === 0
-                    ? "bg-autumn-primary"
-                    : index === 1
-                    ? "bg-winter-primary"
-                    : "bg-spring-primary"
-                }`}
-              />
             </div>
           ))}
-        </div>
-
-        {/* Call to action */}
-        <div className="mt-12 text-center">
-          <p className="text-base-content/70">
-            Want to work together?{" "}
-            <a
-              href="#contact"
-              className="text-primary hover:underline font-medium"
-            >
-              Let&apos;s connect →
-            </a>
-          </p>
         </div>
       </div>
     </section>
